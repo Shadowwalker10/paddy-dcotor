@@ -1,0 +1,19 @@
+setuptools==73.0.1
+#tensorflow-gpu==2.10.1 #install tensorflow manually
+pandas
+notebook
+matplotlib
+seaborn
+numpy
+python-box==6.0.2
+ensure==1.0.2
+tqdm
+PyYAML
+joblib
+types-PyYAML
+scipy
+Flask
+Flask-Cors
+kaggle
+dvc
+-e.
