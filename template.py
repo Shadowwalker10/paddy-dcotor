@@ -33,6 +33,7 @@ lst_of_files = [
     "requirements.txt",
     "setup.py",
     "app.py",
+    "main.py",
     "dvc.yaml",
     "research/trials.ipynb",
     "templates/index.html",
