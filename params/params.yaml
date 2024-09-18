@@ -1,1 +1,11 @@
-key: value
+weights: IMAGENET1K_V1
+input_shape: [3,224,224] #c x h x w
+freeze_all: False
+freeze_till: 3
+learning_rate: 0.0001
+classes: 10
+dropout_rate: 0.3
+l2_weight_decay: 0.016
+l1_weight_decay: 0.006
+
+
