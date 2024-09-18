@@ -7,5 +7,10 @@ classes: 10
 dropout_rate: 0.3
 l2_weight_decay: 0.016
 l1_weight_decay: 0.006
+lr_reduce_factor: 0.2
+lr_reduce_patience: 5
+min_lr: 0.000001
+early_stopping_patience: 10
+early_stopping_delta: 0.005 #Minimum improvement to be considered as an improvement
 
 

@@ -17,4 +17,5 @@ Flask-Cors
 kaggle
 dvc
 torchinfo
+tensorboard
 -e.

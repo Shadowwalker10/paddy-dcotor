@@ -1,7 +1,7 @@
 ## Update configuration manager
 from paddydoctor.constants import *
 from paddydoctor.utils.common import *
-from paddydoctor.entity import DataIngestionConfig, PrepareBaseModelConfig
+from paddydoctor.entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig
 
 
 class ConfigurationManager:
@@ -38,5 +38,26 @@ class ConfigurationManager:
                                                         l1_weight_decay = self.params.l1_weight_decay)
         
         return prepare_base_model_config
+    
+    def get_prepare_callbacks_config(self):
+        config = self.config.prepare_callbacks
+        
+        create_directories_files([config.root_dir])
+        create_directories_files([config.tensorboard_root_log_dir])
+        create_directories_files([os.path.dirname(config.checkpoint_model_filepath)])
+
+
+        prepare_callbacks_config = PrepareCallbacksConfig(root_dir = Path(config.root_dir), 
+                                                          tensorboard_root_log_dir = Path(config.tensorboard_root_log_dir),
+                                                          checkpoint_model_filepath = Path(config.checkpoint_model_filepath),
+                                                          learning_rate = self.params.learning_rate,
+                                                          lr_reduce_factor = self.params.lr_reduce_factor, 
+                                                          lr_reduce_patience = self.params.lr_reduce_patience,
+                                                          min_lr = self.params.min_lr, 
+                                                          early_stopping_patience = self.params.early_stopping_patience,
+                                                          early_stopping_delta = self.params.early_stopping_delta
+                                                          )
+        
+        return prepare_callbacks_config
 
         

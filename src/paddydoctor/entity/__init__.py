@@ -24,3 +24,15 @@ class PrepareBaseModelConfig:
     dropout_rate:float
     l2_weight_decay: float
     l1_weight_decay: float
+
+@dataclass(frozen = True)
+class PrepareCallbacksConfig:
+    root_dir: Path
+    tensorboard_root_log_dir: Path
+    checkpoint_model_filepath: Path
+    learning_rate: float
+    lr_reduce_factor: float
+    lr_reduce_patience: int
+    min_lr: float
+    early_stopping_patience: int
+    early_stopping_delta: int
